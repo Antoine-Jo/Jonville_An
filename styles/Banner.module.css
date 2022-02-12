@@ -2,15 +2,16 @@
   background-color: #2d2e32;
   display: inline-flex;
   width: 100%;
+  max-width: 1440px;
   height: 10rem;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   /* position: fixed; */
   top: 0;
 }
 
 .banner_container h1 {
-  margin: 0;
+  margin: 0 2rem;
 }
 
 .banner_container span {
@@ -24,5 +25,19 @@
 
 .banner_container a {
   color: white;
+  margin: 0 1rem;
+}
+
+.banner_container a:hover {
+  color: #63f5aa;
+}
+
+.banner_container ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.banner_container li {
   margin: 0 1rem;
 }

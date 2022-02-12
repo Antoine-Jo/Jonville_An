@@ -1,29 +1,17 @@
 export default function About() {
   return (
-    <div id="about">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-        accusantium cupiditate incidunt est nobis repellat soluta sapiente.
-        Cumque quaerat debitis qui, hic explicabo et aliquid unde voluptas iste
-        a optio.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-        accusantium cupiditate incidunt est nobis repellat soluta sapiente.
-        Cumque quaerat debitis qui, hic explicabo et aliquid unde voluptas iste
-        a optio.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-        accusantium cupiditate incidunt est nobis repellat soluta sapiente.
-        Cumque quaerat debitis qui, hic explicabo et aliquid unde voluptas iste
-        a optio.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-        accusantium cupiditate incidunt est nobis repellat soluta sapiente.
-        Cumque quaerat debitis qui, hic explicabo et aliquid unde voluptas iste
-        a optio.
+    <div id="" className="w-[100%] flex-col max-w-[1440px] mx-auto">
+      <div className="flex mx-auto my-0 w-[100%] justify-around">
+        <p className="select-none bg-[#64F4AC] text-black w-[181px] text-center p-1 rounded">
+          Front-End Developer
+        </p>
+        <p className="select-none bg-[#64F4AC] text-black w-[181px] text-center p-1 rounded">
+          Back-End Developer
+        </p>
+      </div>
+      <p className="text-[#9699A2] text-[2rem] mt-[5rem] w-[80%] mx-auto">
+        Je conçois et code des Web-App magnifiquement simple, et j&#39;aime ce
+        que je fais
       </p>
     </div>
   );
