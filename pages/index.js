@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner />
-      <main className="mt-[10rem]">
+      <main id="#" className="mt-[12rem]">
         <About />
 
         <Portfolio />
