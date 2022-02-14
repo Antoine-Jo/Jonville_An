@@ -61,6 +61,21 @@ export default function About() {
 
         <Picture title="MySQL" source="/mysql.svg" />
       </div>
+
+      <h2 className="self-center mt-[2rem] text-[1.8rem]">Mes Formations :</h2>
+      <div className="flex rounded-[1.2rem] h-[6.5rem] px-[10px] mx-auto mt-[3rem] mb-[5rem] items-center border-2 border-solid border-[#7451eb] max-w-[648px]">
+        <Image
+          src="/openclassroom.jpg"
+          alt="Logo d'OpenClassrooms"
+          height="90px"
+          width="90px"
+          className="rounded-[15px] object-cover"
+        />
+        <p className="ml-[10px]">
+          Diplômé en Février 2022 de la formation &quot;Développement Web&quot;
+          (Niveau bac+2)
+        </p>
+      </div>
     </div>
   );
 }
