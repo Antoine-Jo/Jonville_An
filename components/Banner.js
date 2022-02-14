@@ -38,13 +38,13 @@ export default function Banner() {
       </nav> */}
 
       <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
-        <h1 className="mx-[2rem] my-0 text-[2rem] navbar__logo">
+        {/* <h1 className="mx-[2rem] my-0 text-[2rem] navbar__logo">
           Antoine <span className="text-[#c8c8ca]">Jonville</span>
-        </h1>
+        </h1> */}
         <ul className="navbar__links">
-          <Link href="#" className="navbar__link">
+          <Link href="/" className="navbar__link">
             <a
-              className="navbar__item slideInDown-1 m-4 text-[1.5rem]"
+              className="navbar__item slideInDown-1 m-4 text-[1.5rem] hover:text-[#64F4AC]"
               onClick={handleShowMenu}
             >
               Accueil
@@ -52,7 +52,7 @@ export default function Banner() {
           </Link>
           <Link href="#portfolio" className="navbar__link">
             <a
-              className="navbar__item  slideInDown-2 m-4 text-[1.5rem]"
+              className="navbar__item  slideInDown-2 m-4 text-[1.5rem] hover:text-[#64F4AC]"
               onClick={handleShowMenu}
             >
               Portfolio
@@ -60,7 +60,7 @@ export default function Banner() {
           </Link>
           <Link href="#about" className="navbar__link">
             <a
-              className="navbar__item slideInDown-3 m-4 text-[1.5rem]"
+              className="navbar__item slideInDown-3 m-4 text-[1.5rem] hover:text-[#64F4AC]"
               onClick={handleShowMenu}
             >
               À propos
@@ -68,7 +68,7 @@ export default function Banner() {
           </Link>
           <Link href="#contact" className="navbar__link">
             <a
-              className="navbar__item slideInDown-4 m-4 text-[1.5rem]"
+              className="navbar__item slideInDown-4 m-4 text-[1.5rem] hover:text-[#64F4AC]"
               onClick={handleShowMenu}
             >
               Contact

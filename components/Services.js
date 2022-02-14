@@ -1,17 +1,6 @@
-import Image from "next/image";
-
-export default function About() {
+export default function Services() {
   return (
-    <div id="about" className="bg-[#25262A] pt-[5rem] flex flex-col">
-      <div className="mx-auto">
-        <Image
-          src="/me.jpg"
-          alt="me"
-          width="375"
-          height="480"
-          className="rounded-[1.3rem] object-cover"
-        />
-      </div>
+    <div id="services">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
         accusantium cupiditate incidunt est nobis repellat soluta sapiente.

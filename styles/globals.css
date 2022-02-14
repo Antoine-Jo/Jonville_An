@@ -34,6 +34,7 @@ a {
   min-height: 75px;
   background-color: #25262a;
   color: #eee;
+  z-index: 9999;
 }
 
 .navbar__links {
