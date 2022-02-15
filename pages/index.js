@@ -5,7 +5,6 @@ import Contact from "../components/Contact";
 import Portfolio from "../components/Portfolio";
 import About from "../components/About";
 import Services from "../components/Services";
-import Script from "next/script";
 
 export default function Home() {
   return (
@@ -31,13 +30,14 @@ export default function Home() {
         <Contact />
       </main>
 
-      <Script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" />
-      <Script
-        id="submit"
-        onSubmit={(e) => {
-          emailjs.init("user_6Dn3ZkCHSUyheBuJ3vHvE");
-        }}
-      />
+      <footer className="my-[5rem] max-w-[1050px] px-[10px] mx-auto flex justify-around items-center">
+        <p className="text-[2rem] text-center">
+          Antoine <span className="text-[#9699A2]">Jonville</span>
+        </p>
+        <p className="text-[#9699A2] text-center text-[1.3rem]">
+          © 2022. All Rights Reserved.
+        </p>
+      </footer>
     </>
   );
 }

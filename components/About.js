@@ -4,7 +4,7 @@ import Picture from "./Picture";
 
 export default function About() {
   return (
-    <div id="about" className="bg-[#25262A] pt-[5rem] flex flex-col">
+    <div id="about" className="bg-[#25262A] px-[20px] pt-[5rem] flex flex-col">
       <div className="mx-auto">
         <Image
           src="/me.jpg"
@@ -40,7 +40,7 @@ export default function About() {
         </Link>
       </div>
 
-      <div className="flex flex-wrap justify-around mx-[1rem] sm:mx-auto mt-[3rem] max-w-[1050px]">
+      <div className="flex flex-wrap gap-10 justify-around mx-[1rem] sm:mx-auto mt-[3rem] max-w-[1050px]">
         <Picture title="HTML" source="/html.svg" />
 
         <Picture title="CSS" source="/css.svg" />

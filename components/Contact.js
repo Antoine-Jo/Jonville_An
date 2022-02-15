@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col">
+    <div id="contact" className="flex flex-col">
       <h2 className="text-[2rem] mt-[5rem] border-b-[1px] border-solid border-[#64F4AC] self-center">
         Me Contacter :
       </h2>
-      <div className="grid grid-rows-3 grid-cols-2 gap-4 mx-auto items-center mt-[3rem]">
+      <div className="flex flex-col sm:grid sm:grid-rows-3 sm:grid-cols-2 sm:gap-4 mx-auto items-center mt-[3rem]">
         <Image src="/mobile.svg" width="50" height="50" alt="Icon Mobile" />
         <p className="text-[#fff] text-center">06.29.89.42.74</p>
 
