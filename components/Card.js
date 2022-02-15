@@ -1,6 +1,6 @@
-export default function Card({ title, price, number }) {
+export default function Card({ title, price, number, options, essentiel }) {
   return (
-    <div className="flex flex-col items-center border border-[#fff] border-[1px] w-[70%] rounded-2xl p-[10px] mx-auto mt-[5rem] shadow-white shadow-[0_0_1px_1px_rgba(0,0,0,0.3)]">
+    <div className="flex flex-col items-center border border-[#fff] border-[1px] w-[70%] sm:w-[45%] lg:w-[30%] rounded-2xl p-[10px] mx-auto mt-[5rem] shadow-white shadow-[0_0_1px_1px_rgba(0,0,0,0.3)]">
       <div className="border border-[#000] border-[2px] rounded-2xl w-[100%] bg-[#25262A] flex-col flex shadow-white shadow-[0_0_2px_1px_rgba(0,0,0,0.3)]">
         <h3 className="text-[3rem] self-center text-[#64F4AC]">{title}</h3>
         <p className="self-center">
@@ -20,10 +20,25 @@ export default function Card({ title, price, number }) {
         </p>
         <p className="mb-[0.5rem]">{">"} Suivi après prestation</p>
         <p className="mb-[0.5rem]">{"</>"} Html, Css, et JavaScript</p>
+        {options && <p className="mb-[0.5rem]">{"</>"} ReactJS / NextJS</p>}
+        {options && (
+          <p className="mb-[0.5rem]">{"</>"} NodeJS / MySQL - MongoDB</p>
+        )}
       </div>
-      <div className="mt-[5rem] mb-[2rem] bg-[#25262A] border p-[1rem] rounded-xl">
-        <button className="text-[#64F4AC] text-xl">EN SAVOIR PLUS</button>
-      </div>
+      {essentiel && (
+        <div className="mt-[9rem] bg-[#25262A] border p-[1rem] rounded-xl hover:scale-110 hover:animate-bounce hover:shadow-white hover:shadow-[0_0_2px_1px_rgba(0,0,0,0.3)]">
+          <button className="text-[#64F4AC] hover:text-[#fff] text-xl">
+            EN SAVOIR PLUS
+          </button>
+        </div>
+      )}
+      {options && (
+        <div className="mt-[5rem] mb-[1rem] bg-[#25262A] border p-[1rem] rounded-xl hover:scale-110 hover:animate-bounce hover:shadow-white hover:shadow-[0_0_2px_1px_rgba(0,0,0,0.3)]">
+          <button className="text-[#64F4AC] hover:text-[#fff] text-xl">
+            EN SAVOIR PLUS
+          </button>
+        </div>
+      )}
     </div>
   );
 }

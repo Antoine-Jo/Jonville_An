@@ -40,7 +40,7 @@ export default function About() {
         </Link>
       </div>
 
-      <div className="flex flex-wrap justify-around mx-auto mt-[3rem] max-w-[1050px]">
+      <div className="flex flex-wrap justify-around mx-[1rem] sm:mx-auto mt-[3rem] max-w-[1050px]">
         <Picture title="HTML" source="/html.svg" />
 
         <Picture title="CSS" source="/css.svg" />
@@ -63,7 +63,7 @@ export default function About() {
       </div>
 
       <h2 className="self-center mt-[2rem] text-[1.8rem]">Mes Formations :</h2>
-      <div className="flex rounded-[1.2rem] h-[6.5rem] px-[10px] mx-auto mt-[3rem] mb-[5rem] items-center border-2 border-solid border-[#7451eb] max-w-[648px]">
+      <div className="flex rounded-[1.2rem] h-[6.5rem] px-[10px] mx-[1rem] sm:mx-auto mt-[3rem] mb-[5rem] items-center border-2 border-solid border-[#7451eb] max-w-[648px]">
         <Image
           src="/openclassroom.jpg"
           alt="Logo d'OpenClassrooms"
