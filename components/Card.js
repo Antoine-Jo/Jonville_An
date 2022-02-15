@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Card({ title, price, number, options, essentiel }) {
   return (
     <div className="flex flex-col items-center border border-[#fff] border-[1px] w-[70%] sm:w-[45%] lg:w-[30%] rounded-2xl p-[10px] mx-auto mt-[5rem] shadow-white shadow-[0_0_1px_1px_rgba(0,0,0,0.3)]">
@@ -27,16 +29,20 @@ export default function Card({ title, price, number, options, essentiel }) {
       </div>
       {essentiel && (
         <div className="mt-[9rem] bg-[#25262A] border p-[1rem] rounded-xl hover:scale-110 hover:animate-bounce hover:shadow-white hover:shadow-[0_0_2px_1px_rgba(0,0,0,0.3)]">
-          <button className="text-[#64F4AC] hover:text-[#fff] text-xl">
-            EN SAVOIR PLUS
-          </button>
+          <Link href="#contact">
+            <a className="text-[#64F4AC] hover:animate-bounce hover:text-[#fff] text-xl">
+              EN SAVOIR PLUS
+            </a>
+          </Link>
         </div>
       )}
       {options && (
         <div className="mt-[5rem] mb-[1rem] bg-[#25262A] border p-[1rem] rounded-xl hover:scale-110 hover:animate-bounce hover:shadow-white hover:shadow-[0_0_2px_1px_rgba(0,0,0,0.3)]">
-          <button className="text-[#64F4AC] hover:text-[#fff] text-xl">
-            EN SAVOIR PLUS
-          </button>
+          <Link href="#contact">
+            <a className="text-[#64F4AC] hover:animate-bounce hover:text-[#fff] text-xl">
+              EN SAVOIR PLUS
+            </a>
+          </Link>
         </div>
       )}
     </div>
