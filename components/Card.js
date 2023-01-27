@@ -22,9 +22,11 @@ export default function Card({ title, price, number, options, essentiel }) {
         </p>
         <p className="mb-[0.5rem]">{">"} Suivi après prestation</p>
         <p className="mb-[0.5rem]">{"</>"} Html, Css, et JavaScript</p>
-        {options && <p className="mb-[0.5rem]">{"</>"} ReactJS / NextJS</p>}
         {options && (
-          <p className="mb-[0.5rem]">{"</>"} NodeJS / MySQL - MongoDB</p>
+          <>
+            <p className="mb-[0.5rem]">{"</>"} ReactJS / NextJS</p>
+            <p className="mb-[0.5rem]">{"</>"} NodeJS / MySQL - MongoDB</p>
+          </>
         )}
       </div>
       {essentiel && (
