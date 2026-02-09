@@ -1,6 +1,19 @@
 import Link from "next/link";
 
-export default function Card({ title, price, number, options, essentiel }) {
+type CardProps = {
+    title: string;
+    price: string;
+    number: string;
+    options?: "options";
+    essentiel?: "essentiel";
+};
+
+type ContentCardProps = {
+    number: string;
+    options?: "options";
+};
+
+export default function Card({ title, price, number, options, essentiel }: CardProps) {
     return (
         <div className="flex flex-col items-center border border-[#fff] border-[1px] w-[70%] sm:w-[45%] lg:w-[30%] rounded-2xl p-[10px] mx-auto mt-[5rem] shadow-white shadow-[0_0_1px_1px_rgba(0,0,0,0.3)]">
             <div className="border border-[#000] border-[2px] rounded-2xl w-[100%] bg-[#25262A] flex-col flex shadow-white shadow-[0_0_2px_1px_rgba(0,0,0,0.3)]">
@@ -26,7 +39,7 @@ export default function Card({ title, price, number, options, essentiel }) {
     );
 }
 
-function ContentCard({ number, options }) {
+function ContentCard({ number, options }: ContentCardProps) {
     return (
         <div className="mt-[2rem] flex flex-col ml-[2rem]">
             <p className="mb-[0.5rem]">

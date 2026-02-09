@@ -7,7 +7,7 @@ export default function Portfolio() {
         WORK IN PROGRESS
       </h2>
       <div className="mt-[3rem] mb-[5rem]">
-        <Image src="/404.webp" width="300" height="300" alt="404" />
+        <Image src="/404.webp" width={300} height={300} alt="404" />
       </div>
     </div>
   );

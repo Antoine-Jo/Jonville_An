@@ -6,7 +6,7 @@ export default function About() {
     return (
         <div id="about" className="bg-[#25262A] px-[20px] pt-[5rem] flex flex-col">
             <div className="mx-auto">
-                <Image src="/me.jpg" alt="me" width="375" height="480" className="rounded-[1.3rem] object-cover" priority={true} />
+                <Image src="/me.jpg" alt="Portrait of Antoine Jonville" width={375} height={480} className="rounded-[1.3rem] object-cover" priority={true} />
             </div>
             <div className="flex-col mx-auto text-center mt-[2rem] text-[1.2rem]">
                 <p className="text-yellow-500 dark:text-yellow-400">Antoine Jonville, 33ans, Cannes(06, Alpes-Maritimes)</p>
@@ -20,7 +20,7 @@ export default function About() {
                 <h2 className="self-center mt-[2rem] text-[1.8rem]">Mes compétences :</h2>
                 <p className="mt-[2rem]">Vous pouvez retrouver mes projets publics en visitant mon Github, en cliquant ci-dessous :</p>
                 <Link href="https://github.com/Antoine-Jo">
-                    <Image src="/github.svg" width="40" height="48" alt="github" />
+                    <Image src="/github.svg" width={40} height={48} alt="Github" />
                 </Link>
             </div>
 
