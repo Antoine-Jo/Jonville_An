@@ -9,7 +9,7 @@ export default function About() {
                 <Image src="/me.jpg" alt="me" width="375" height="480" className="rounded-[1.3rem] object-cover" priority={true} />
             </div>
             <div className="flex-col mx-auto text-center mt-[2rem] text-[1.2rem]">
-                <p>Antoine Jonville, 33ans, Cannes(06, Alpes-Maritimes)</p>
+                <p className="text-yellow-500 dark:text-yellow-400">Antoine Jonville, 33ans, Cannes(06, Alpes-Maritimes)</p>
                 <p className="max-w-[1025px] mx-auto my-[1rem] text-[#9699A2]">
                     J&#39;ai commencé le développement web en autodidacte, étant passionné par le monde de l&#39;informatique, j&#39;ai effectué une formation
                     de 6 mois avec OpenClassrooms sur le parcours Développeur Web. Je suis quelqu&#39;un de curieux et passionné, j&#39;aime expérimenter,

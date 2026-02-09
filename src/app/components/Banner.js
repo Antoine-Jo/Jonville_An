@@ -1,6 +1,7 @@
+"use client";
 import Link from "next/link";
 import { useState } from "react";
-// import styles from "../styles/Banner.module.css";
+import styles from "./Banner.module.css";
 
 export default function Banner() {
     const [showLinks, setShowLinks] = useState(false);
