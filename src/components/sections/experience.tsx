@@ -1,28 +1,27 @@
-const experienceItems = [
-    {
-        period: "2022 - Today",
-        role: "Front-end Developer",
-        summary: "Delivered React and Next.js interfaces with performance and maintainability goals.",
-    },
-    {
-        period: "2023 - Today",
-        role: "React Native Developer",
-        summary: "Built cross-platform mobile experiences with reusable UI architecture and clean state management.",
-    },
-];
+import { experienceItems } from "../../content/experience";
 
 export default function ExperienceSection() {
     return (
-        <section id="experience" className="mx-auto w-full max-w-6xl px-4 py-16 md:px-8">
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">Experience</h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-                {experienceItems.map((item) => (
-                    <article key={`${item.period}-${item.role}`} className="rounded-2xl border border-white/10 bg-[#1A1B21] p-6">
-                        <p className="text-xs uppercase tracking-[0.2em] text-[#64F4AC]">{item.period}</p>
-                        <h3 className="mt-3 text-xl font-medium text-white">{item.role}</h3>
-                        <p className="mt-3 text-sm leading-relaxed text-[#B7BAC6]">{item.summary}</p>
-                    </article>
-                ))}
+        <section id="experience" aria-labelledby="experience-title" className="section-row">
+            <div className="container-shell grid-12">
+                <div className="col-span-12 section-heading-wrap">
+                    <h2 id="experience-title" className="section-title">
+                        Experience
+                    </h2>
+                </div>
+
+                <div className="col-span-12 timeline-root">
+                    <span className="timeline-line" aria-hidden="true" />
+                    {experienceItems.map((item, index) => (
+                        <article key={`${item.period}-${item.role}`} className="timeline-item" style={{ animationDelay: `${index * 0.05}s` }}>
+                            <p className="mono timeline-period">{item.period}</p>
+                            <div>
+                                <h3 className="timeline-role">{item.role}</h3>
+                                <p className="timeline-context">{item.context}</p>
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     );

@@ -1,26 +1,40 @@
 import SiteHeader from "../components/layout/site-header";
-import AboutSection from "../components/sections/about";
+import SiteFooter from "../components/layout/site-footer";
 import ContactSection from "../components/sections/contact";
 import ExperienceSection from "../components/sections/experience";
 import HeroSection from "../components/sections/hero";
 import ProjectsSection from "../components/sections/projects";
 import SkillsSection from "../components/sections/skills";
+import CustomCursor from "../components/ui/custom-cursor";
+import Reveal from "../components/ui/reveal";
 
 export default function HomePage() {
     return (
-        <div className="min-h-screen bg-[#111217] text-white">
+        <div className="app-shell">
+            <a
+                href="#main-content"
+                className="sr-only rounded-md bg-[var(--accent)] px-4 py-2 font-medium text-[#101217] focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50"
+            >
+                Skip to content
+            </a>
+            <CustomCursor />
             <SiteHeader />
-            <main>
+            <main id="main-content" className="page-enter">
                 <HeroSection />
-                <AboutSection />
-                <ExperienceSection />
-                <ProjectsSection />
-                <SkillsSection />
-                <ContactSection />
+                <Reveal delayMs={50}>
+                    <ProjectsSection />
+                </Reveal>
+                <Reveal delayMs={100}>
+                    <ExperienceSection />
+                </Reveal>
+                <Reveal delayMs={150}>
+                    <SkillsSection />
+                </Reveal>
+                <Reveal delayMs={200}>
+                    <ContactSection />
+                </Reveal>
             </main>
-            <footer className="mx-auto w-full max-w-6xl px-4 py-10 text-sm text-[#8F93A3] md:px-8">
-                © {new Date().getFullYear()} Antoine Jonville
-            </footer>
+            <SiteFooter />
         </div>
     );
 }

@@ -1,44 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Antoine Jonville Portfolio
 
-## Getting Started
+Personal portfolio built with Next.js App Router and TypeScript, focused on React / React Native front-end engineering.
 
-This project uses `pnpm` only.
+## Goals
+- Present profile, stack, and experience clearly.
+- Keep the codebase clean, typed, and maintainable.
+- Deliver a sober, performant, and responsive UI.
 
-Install dependencies:
+## Tech Stack
+- Next.js 16 (App Router)
+- React 19
+- TypeScript (strict)
+- Tailwind CSS v4
+- Framer Motion (targeted motion)
 
+## Requirements
+- Node.js `>= 22`
+- pnpm `>= 8`
+
+## Installation
 ```bash
 pnpm install
 ```
 
-Run the development server:
-
+## Local Development
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-Useful commands:
-
+## Available Scripts
 ```bash
-pnpm lint
+pnpm lint       # run ESLint
+pnpm typecheck  # run TypeScript checks
+pnpm build      # production build
+pnpm start      # run production server
+pnpm check      # lint + typecheck + build
+```
+
+## Project Structure
+```txt
+src/
+  app/
+    layout.tsx
+    page.tsx
+    globals.css
+    providers.tsx
+  components/
+    layout/
+      site-header.tsx
+      site-footer.tsx
+    sections/
+      hero.tsx
+      projects.tsx
+      experience.tsx
+      skills.tsx
+      contact.tsx
+    ui/
+      custom-cursor.tsx
+      mobile-nav.tsx
+      reveal.tsx
+      stack-tags.tsx
+      copy-email-button.tsx
+      theme-toggle.tsx
+  content/
+    site.ts
+    projects.ts
+    experience.ts
+    skills.ts
+  lib/
+    utils.ts
+```
+
+## Architecture Conventions
+- Page sections are Server Components by default.
+- Client Components are used only for interactions (mobile menu, custom cursor, motion, copy-to-clipboard).
+- Content data is centralized in `src/content/*`.
+- Global styles and visual tokens are defined in `src/app/globals.css`.
+
+## Deployment
+Production run:
+```bash
 pnpm build
 pnpm start
 ```
 
-You can start editing the app by modifying `src/app/page.tsx`.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Private project (`private: true`).
