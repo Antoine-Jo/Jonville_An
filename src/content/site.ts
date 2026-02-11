@@ -11,7 +11,6 @@ export type SocialLink = {
 export const siteContent = {
     name: "Antoine Jonville",
     role: "Front-end Developer",
-    openToWorkLabel: "Open to work",
     nav: [
         { href: "#projects", label: "Projects" },
         { href: "#experience", label: "Experience" },

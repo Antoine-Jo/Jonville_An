@@ -18,11 +18,6 @@ export default function SiteHeader() {
                     ))}
                 </nav>
 
-                <a href="#contact" className="open-to-work" data-cursor-target>
-                    <span className="status-dot" aria-hidden="true" />
-                    {siteContent.openToWorkLabel}
-                </a>
-
                 <div className="mobile-header-action">
                     <MobileNav items={siteContent.nav} />
                 </div>

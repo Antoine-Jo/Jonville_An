@@ -32,9 +32,6 @@ export default function MobileNav({ items }: MobileNavProps) {
                             {item.label}
                         </Link>
                     ))}
-                    <Link href="#contact" className="mobile-menu-link mobile-menu-cta" onClick={() => setOpen(false)} data-cursor-target>
-                        Open to work
-                    </Link>
                 </nav>
             )}
         </div>
