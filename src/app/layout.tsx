@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
+import SiteFooter from "../components/layout/site-footer";
+import SiteHeader from "../components/layout/site-header";
+import CustomCursor from "../components/ui/custom-cursor";
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://antoinejonville.fr"),
     title: {
         default: "Antoine Jonville | Front-end Developer",
         template: "%s | Antoine Jonville",
@@ -16,7 +20,9 @@ export const metadata: Metadata = {
         title: "Antoine Jonville | Front-end Developer",
         description: "React.js and React Native developer portfolio with a focus on product quality, maintainability, and performance.",
         type: "website",
-        locale: "fr_FR",
+        locale: "en_US",
+        url: "/",
+        siteName: "Antoine Jonville Portfolio",
     },
     twitter: {
         card: "summary_large_image",
@@ -31,9 +37,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="fr" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning>
             <body>
-                <Providers>{children}</Providers>
+                <Providers>
+                    <div className="app-shell">
+                        <a href="#main-content" className="skip-link">
+                            Skip to content
+                        </a>
+                        <CustomCursor />
+                        <SiteHeader />
+                        {children}
+                        <SiteFooter />
+                    </div>
+                </Providers>
             </body>
         </html>
     );

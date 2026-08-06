@@ -15,7 +15,7 @@ Personal portfolio built with Next.js App Router and TypeScript, focused on Reac
 - Framer Motion (targeted motion)
 
 ## Requirements
-- Node.js `>= 22`
+- Node.js `>= 22.12.0`
 - pnpm `>= 8`
 
 ## Installation
@@ -32,9 +32,10 @@ pnpm dev
 ```bash
 pnpm lint       # run ESLint
 pnpm typecheck  # run TypeScript checks
+pnpm test       # run component tests
 pnpm build      # production build
 pnpm start      # run production server
-pnpm check      # lint + typecheck + build
+pnpm check      # lint + typecheck + tests + build
 ```
 
 ## Project Structure
@@ -45,6 +46,11 @@ src/
     page.tsx
     globals.css
     providers.tsx
+    sitemap.ts
+    projects/
+      fooder/
+        page.tsx
+        opengraph-image.tsx
   components/
     layout/
       site-header.tsx
@@ -61,14 +67,15 @@ src/
       reveal.tsx
       stack-tags.tsx
       copy-email-button.tsx
-      theme-toggle.tsx
+    projects/
+      project-card.tsx
   content/
     site.ts
     projects.ts
     experience.ts
     skills.ts
-  lib/
-    utils.ts
+  test/
+    setup.ts
 ```
 
 ## Architecture Conventions
@@ -76,6 +83,8 @@ src/
 - Client Components are used only for interactions (mobile menu, custom cursor, motion, copy-to-clipboard).
 - Content data is centralized in `src/content/*`.
 - Global styles and visual tokens are defined in `src/app/globals.css`.
+- Project cards and case studies share typed data from `src/content/projects.ts`.
+- Component tests run with Vitest and Testing Library.
 
 ## Deployment
 Production run:

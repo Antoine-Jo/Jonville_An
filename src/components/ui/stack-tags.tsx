@@ -33,7 +33,7 @@ const itemVariants = {
     },
 };
 
-function TagChip({ tag, index, reduceMotion }: { tag: StackTag; index: number; reduceMotion: boolean }) {
+function TagChip({ tag, reduceMotion }: { tag: StackTag; reduceMotion: boolean }) {
     const levelClass = `level-${tag.level.toLowerCase()}` as const;
     const featuredClass = tag.animated ? "is-featured" : "";
 
@@ -77,8 +77,8 @@ export default function StackTags({ groups }: StackTagsProps) {
                         whileInView={reduceMotion ? undefined : "visible"}
                         viewport={{ once: true, amount: 0.45 }}
                     >
-                        {group.tags.map((tag, index) => (
-                            <TagChip key={`${group.title}-${tag.label}`} tag={tag} index={index} reduceMotion={Boolean(reduceMotion)} />
+                        {group.tags.map((tag) => (
+                            <TagChip key={`${group.title}-${tag.label}`} tag={tag} reduceMotion={Boolean(reduceMotion)} />
                         ))}
                     </motion.ul>
                 </section>

@@ -1,52 +1,72 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-type CursorState = {
-    x: number;
-    y: number;
-};
+import { useEffect, useRef } from "react";
 
 const CLICKABLE_SELECTOR = "a, button, [data-cursor-target], input, textarea, select";
 
 export default function CustomCursor() {
-    const [position, setPosition] = useState<CursorState>({ x: 0, y: 0 });
-    const [isActive, setIsActive] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
+    const cursorRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia("(pointer: fine)");
-        if (!mediaQuery.matches) return;
+        const cursor = cursorRef.current;
+        if (!cursor) return;
 
-        const onMouseMove = (event: MouseEvent) => {
-            setIsVisible(true);
-            setPosition({ x: event.clientX, y: event.clientY });
+        const pointerQuery = window.matchMedia("(pointer: fine)");
+        const motionQuery = window.matchMedia("(prefers-reduced-motion: no-preference)");
+        let frameId: number | null = null;
+        let x = 0;
+        let y = 0;
+
+        const updatePosition = () => {
+            cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            frameId = null;
         };
 
-        const onMouseOver = (event: MouseEvent) => {
-            const target = event.target as HTMLElement | null;
-            if (!target) return;
-            setIsActive(Boolean(target.closest(CLICKABLE_SELECTOR)));
+        const onPointerMove = (event: PointerEvent) => {
+            x = event.clientX;
+            y = event.clientY;
+            document.documentElement.classList.add("custom-cursor-enabled");
+            cursor.classList.add("custom-cursor--visible");
+            if (frameId === null) frameId = window.requestAnimationFrame(updatePosition);
         };
 
-        const onMouseLeave = () => setIsVisible(false);
+        const onPointerOver = (event: PointerEvent) => {
+            const target = event.target as Element | null;
+            cursor.classList.toggle("custom-cursor--active", Boolean(target?.closest(CLICKABLE_SELECTOR)));
+        };
 
-        window.addEventListener("mousemove", onMouseMove);
-        window.addEventListener("mouseover", onMouseOver);
-        window.addEventListener("mouseleave", onMouseLeave);
+        const onPointerLeave = () => cursor.classList.remove("custom-cursor--visible");
+
+        const removePointerListeners = () => {
+            window.removeEventListener("pointermove", onPointerMove);
+            window.removeEventListener("pointerover", onPointerOver);
+            document.documentElement.removeEventListener("mouseleave", onPointerLeave);
+            document.documentElement.classList.remove("custom-cursor-enabled");
+            cursor.classList.remove("custom-cursor--visible", "custom-cursor--active");
+            if (frameId !== null) {
+                window.cancelAnimationFrame(frameId);
+                frameId = null;
+            }
+        };
+
+        const syncPointerListeners = () => {
+            removePointerListeners();
+            if (!pointerQuery.matches || !motionQuery.matches) return;
+            window.addEventListener("pointermove", onPointerMove, { passive: true });
+            window.addEventListener("pointerover", onPointerOver, { passive: true });
+            document.documentElement.addEventListener("mouseleave", onPointerLeave);
+        };
+
+        syncPointerListeners();
+        pointerQuery.addEventListener("change", syncPointerListeners);
+        motionQuery.addEventListener("change", syncPointerListeners);
 
         return () => {
-            window.removeEventListener("mousemove", onMouseMove);
-            window.removeEventListener("mouseover", onMouseOver);
-            window.removeEventListener("mouseleave", onMouseLeave);
+            removePointerListeners();
+            pointerQuery.removeEventListener("change", syncPointerListeners);
+            motionQuery.removeEventListener("change", syncPointerListeners);
         };
     }, []);
 
-    return (
-        <span
-            aria-hidden="true"
-            className={`custom-cursor ${isVisible ? "custom-cursor--visible" : ""} ${isActive ? "custom-cursor--active" : ""}`}
-            style={{ left: `${position.x}px`, top: `${position.y}px` }}
-        />
-    );
+    return <span ref={cursorRef} aria-hidden="true" className="custom-cursor" />;
 }

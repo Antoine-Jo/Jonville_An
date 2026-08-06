@@ -12,10 +12,10 @@ export const siteContent = {
     name: "Antoine Jonville",
     role: "Front-end Developer",
     nav: [
-        { href: "#projects", label: "Projects" },
-        { href: "#experience", label: "Experience" },
-        { href: "#stack", label: "Stack" },
-        { href: "#contact", label: "Contact" },
+        { href: "/#projects", label: "Projects" },
+        { href: "/#experience", label: "Experience" },
+        { href: "/#stack", label: "Stack" },
+        { href: "/#contact", label: "Contact" },
     ] as NavItem[],
     hero: {
         title: "React.js & React Native interfaces, engineered with precision.",
